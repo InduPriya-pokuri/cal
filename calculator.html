@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Calculator</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/calculator.min.css">
+</head>
+<body>
+	<header>
+		<h1>CALCULATOR</h1>
+<div class="calculator-container" alt="calculator">
+	<div class="display-class" alt="Calculator Display">
+		<!-- Calculator Display -->
+		<span id="display"></span>
+	</div>
+	<div class="button-container">
+		<button type="button" name="button" class="primary-button all-clear" alt="Clear all entries">AC</button>
+		<button type="button" name="button" class="primary-button clear-entry" alt="Clear entry">CE</button>
+		<button type="button" name="button" class="primary-button operator-button" alt="Divide">/</button>
+		<button type="button" name="button" class="primary-button operator-button" alt="Multiply">*</button>
+		<button type="button" name="button" class="primary-button number-button" alt="Seven">7</button>
+		<button type="button" name="button" class="primary-button number-button" alt="Eight">8</button>
+		<button type="button" name="button" class="primary-button number-button" alt="Nine">9</button>
+		<button type="button" name="button" class="primary-button operator-button" alt="Subtract">-</button>
+		<button type="button" name="button" class="primary-button number-button" alt="Four">4</button>
+		<button type="button" name="button" class="primary-button number-button" alt="Five">5</button>
+		<button type="button" name="button" class="primary-button number-button" alt="Six">6</button>
+		<button type="button" name="button" class="primary-button operator-button" alt="Seven">+</button>
+		<button type="button" name="button" class="primary-button number-button" alt="One">1</button>
+		<button type="button" name="button" class="primary-button number-button" alt="Two">2</button>
+		<button type="button" name="button" class="primary-button number-button" alt="Three">3</button>
+		<button type="button" name="button" class="primary-button zero-button number-button">0</button>
+		<button type="button" name="button" class="primary-button operator-button" alt="Decimal">.</button>
+		<button type="button" name="button" class="primary-button equals-button" alt="Equals">=</button>
+	</div>
+</div>
+</header>
+
+<script type="text/javascript" src="js/calculator.js"></script>
+<script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+<script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3VRXzDNt-ZokFLihVN18jmGSPo0aOcug&callback=initMap"></script>
+<script>
+if('serviceWorker' in navigator){
+	navigator.serviceWorker
+	.register('./serviceWorker.js',{scope:'./'})
+	.then(function(registration){
+		console.log("serviceWorker registred",registration);
+	})
+	.catch(function(err){
+	console.log("serviceWorker failed to register",err);
+	})
+	}
+
+	//This is the "Offline copy of pages" service worker
+
+		//Add this below content to your HTML page, or add the js file to your page at the very top to register sercie worker
+		if (navigator.serviceWorker.controller) {
+			console.log('[serviceWorker] active service worker found, no need to register')
+		} else {
+			//Register the ServiceWorker
+			navigator.serviceWorker.register('serviceWorker.js', {
+				scope: './'
+			}).then(function(reg) {
+				console.log('Service worker has been registered for scope:'+ reg.scope);
+			});
+		}
+	</script>
+
+<!--footer id="footer">
+	Copyright (c) 2017 <a href="/"><strong>CALCULATOR</strong></a> All Rights Reserved.
+</footer-->
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name":"New project",
+  "short name":"name",
+  "description":"New project",
+  "icons":[{"src":"img/icon.png",
+    "size":" ",
+    "type":"image\/png"
+    }]
+}
